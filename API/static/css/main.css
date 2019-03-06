@@ -1,0 +1,16 @@
+
+.container-fluid{
+    width: 90%;
+}
+
+@media (min-width: 768px) { 
+    .container-fluid{
+        width: 60%;
+    }
+}
+
+@media (min-width: 576px) { 
+    .container-fluid{
+        width: 60%;
+    }
+}
