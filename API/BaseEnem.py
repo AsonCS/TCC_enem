@@ -2,12 +2,13 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
 class BaseEnem:
-
-    "Classe responsável por lidar com o predict."
-    "Nomes das colunas"
-    "'UF_RESIDENCIA','IDADE','TP_SEXO','ST_CONCLUSAO','ANO_CONCLUIU','TP_ESCOLA','TP_ESTADO_CIVIL','TP_COR_RACA','IDX'"
-    "'NOTA_CN','NOTA_CH','NOTA_LC','NOTA_MT','NU_NOTA_REDACAO','IDX'"
-    "'UF_RESIDENCIA', 'IDADE', 'TP_SEXO', 'ST_CONCLUSAO', 'TP_ESCOLA', 'TP_ESTADO_CIVIL', 'TP_COR_RACA'"
+    """
+    Classe responsável por lidar com o predict.
+    Nomes das colunas::
+    'UF_RESIDENCIA','IDADE','TP_SEXO','ST_CONCLUSAO','ANO_CONCLUIU','TP_ESCOLA','TP_ESTADO_CIVIL','TP_COR_RACA','IDX'
+    'NOTA_CN','NOTA_CH','NOTA_LC','NOTA_MT','NU_NOTA_REDACAO','IDX'
+    'UF_RESIDENCIA', 'IDADE', 'TP_SEXO', 'ST_CONCLUSAO', 'TP_ESCOLA', 'TP_ESTADO_CIVIL', 'TP_COR_RACA'
+    """
 
     natu  = None
     human = None
@@ -37,49 +38,51 @@ class BaseEnem:
         self.matem.fit(x_train, y_train['NOTA_MT'])
         self.redac.fit(x_train, y_train['NU_NOTA_REDACAO'])
 
-        # Limpa a memória
+        #: Limpa a memória x_train
         del x_train
+        #: Limpa a memória y_train
         del y_train
     
     def trip(self, n): return n * 3
     
     def doub(self, n): return n * 2
     
-    # Prepara dodos para fazer predict
+    
     def prepair(self, data):
+        """ Prepara dodos para fazer predict """
         if data != None:
             data = pd.DataFrame(data,columns=['UF_RESIDENCIA', 'IDADE', 'TP_SEXO', 'ST_CONCLUSAO', 'TP_ESCOLA', 'TP_ESTADO_CIVIL', 'TP_COR_RACA'])
             return data
         return None
 
-    # Configura o DataSet
+    
     def ap(self, dd):
+        """ Configura o DataSet """
         if not dd.empty:
-            dd = dd[['UF_RESIDENCIA', 'IDADE', 'TP_SEXO', 'ST_CONCLUSAO', 'TP_ESCOLA', 'TP_ESTADO_CIVIL', 'TP_COR_RACA']]
-            dd.iloc[:0].apply(self.doub)
-            dd.iloc[:1].apply(self.trip)
-            dd.iloc[:2].apply(self.trip)
-            dd.iloc[:3].apply(self.trip)
-            dd.iloc[:4].apply(self.trip)
-            dd.iloc[:5].apply(self.doub)
-            dd.iloc[:6].apply(self.doub)
+            data = dd[['UF_RESIDENCIA', 'IDADE', 'TP_SEXO', 'ST_CONCLUSAO', 'TP_ESCOLA', 'TP_ESTADO_CIVIL', 'TP_COR_RACA']]
+            data['IDADE2'] = dd.iloc[:,1] ^ 2
+            data['TP_SEXO2'] = dd.iloc[:,2] ^ 2
+            data['TP_SEXO3'] = dd.iloc[:,2] ^ 3
+            data['ST_CONCLUSAO2'] = dd.iloc[:,3] ^ 2
+            data['ST_CONCLUSAO3'] = dd.iloc[:,3] ^ 3
             return(dd)
         return None
+    
+    
+    def predict(self, args):
+        """
+        Descrição dos argumentos
+        args = DataFrame
 
-    # Descrição dos argumentos
-    '''
-    args = DataFrame
-
-    response =
-    {
+        response =
+        {
         'natu'  : ''
         'human' : ''
         'ling'  : ''
         'matem' : ''
         'redac' : ''
-    }
-    '''
-    def predict(self, args):
+        }
+        """
         if not args.empty:
             response = {}
             response['natu' ] = str(  self.natu.predict( self.ap(args) )[0] )
