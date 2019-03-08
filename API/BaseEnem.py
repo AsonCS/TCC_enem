@@ -65,7 +65,7 @@ class BaseEnem:
             data['TP_SEXO3'] = dd.iloc[:,2] ^ 3
             data['ST_CONCLUSAO2'] = dd.iloc[:,3] ^ 2
             data['ST_CONCLUSAO3'] = dd.iloc[:,3] ^ 3
-            return(dd)
+            return(data)
         return None
     
     
