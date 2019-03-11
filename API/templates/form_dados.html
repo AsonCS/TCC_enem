@@ -23,53 +23,89 @@
         <div class="container-fluid">
             <form>
                 <div class="form-group">
-                    <label for="uf">UF.</label>
-                    <select class="form-control" id="uf">
-                    <option value="1"></option>
-                    <option value="2"></option>
-                    <option value="3"></option>
-                    <option value="4"></option>
-                    <option value="5"></option>
-                    <option value="6"></option>
-                    <option value="7"></option>
-                    <option value="8"></option>
-                    <option value="9"></option>
-                    <option value="10"></option>
-                    <option value="11"></option>
-                    <option value="12"></option>
-                    <option value="13"></option>
-                    <option value="14"></option>
-                    <option value="15"></option>
-                    <option value="16"></option>
-                    <option value="17"></option>
-                    <option value="18"></option>
-                    <option value="19"></option>
-                    <option value="20"></option>
-                    <option value="21"></option>
-                    <option value="22"></option>
-                    <option value="23"></option>
-                    <option value="24"></option>
-                    <option value="25">SP</option>
-                    <option value="26"></option>
-                    <option value="27"></option>
+                    <label for="UF_RESIDENCIA">UF.</label>
+                    <select class="form-control" id="UF_RESIDENCIA" name="UF_RESIDENCIA">
+                        <option value="0">AC</option>
+                        <option value="1">AL</option>
+                        <option value="2">AM</option>
+                        <option value="3">AP</option>
+                        <option value="4">BA</option>
+                        <option value="5">CE</option>
+                        <option value="6">DF</option>
+                        <option value="7">ES</option>
+                        <option value="8">GO</option>
+                        <option value="9">MA</option>
+                        <option value="10">MG</option>
+                        <option value="11">MS</option>
+                        <option value="12">MT</option>
+                        <option value="13">PA</option>
+                        <option value="14">PB</option>
+                        <option value="15">PE</option>
+                        <option value="16">PI</option>
+                        <option value="17">PR</option>
+                        <option value="18">RJ</option>
+                        <option value="19">RN</option>
+                        <option value="20">RO</option>
+                        <option value="21">RR</option>
+                        <option value="22">RS</option>
+                        <option value="23">SC</option>
+                        <option value="24">SE</option>
+                        <option value="25">SP</option>
+                        <option value="26">TO</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="age">Idade.</label>
-                    <input type="number" class="form-control" id="age" placeholder="Sua idade">
+                    <label for="IDADE">Idade.</label>
+                    <input type="number" class="form-control" name="IDADE" id="IDADE" placeholder="Sua idade">
                 </div>
                 <div class="form-group">
-                    <label for="sit_concl">Situação de conclusão.</label>
-                    <select class="form-control" id="sit_concl">
-                        <option value="1"></option>
-                        <option value="2"></option>
-                        <option value="3"></option>
-                        <option value="4"></option>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TP_SEXO" id="TP_SEXO1" value="0">
+                        <label class="form-check-label" for="TP_SEXO1">Feminino.</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TP_SEXO" id="TP_SEXO2" value="1">
+                        <label class="form-check-label" for="TP_SEXO2">Masculino.</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ST_CONCLUSAO">Situação de conclusão do Ensino Médio.</label>
+                    <select class="form-control" id="ST_CONCLUSAO" name="ST_CONCLUSAO">
+                        <option value="1">Já concluí.</option>
+                        <option value="2">Estou cursando e concluirei esse ano.</option>
+                        <option value="3">Estou cursando e concluirei após ano.</option>
+                        <option value="4">Não concluí e não estou cursando.</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TP_ESCOLA" id="TP_ESCOLA1" value="1">
+                        <label class="form-check-label" for="TP_ESCOLA1">Pública.</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TP_ESCOLA" id="TP_ESCOLA2" value="2">
+                        <label class="form-check-label" for="TP_ESCOLA2">Privada.</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="TP_ESTADO_CIVIL">Estado Civil.</label>
+                    <select class="form-control" id="TP_ESTADO_CIVIL" name="TP_ESTADO_CIVIL">
+                        <option value="0">Solteiro(a).</option>
+                        <option value="1">Casado(a)/Mora com um(a) companheiro(a).</option>
+                        <option value="2">Divorciado(a)/Desquitado(a)/Separado(a).</option>
+                        <option value="3">Viúvo(a).</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="TP_COR_RACA">Cor/raça.</label>
+                    <select class="form-control" id="TP_COR_RACA" name="TP_COR_RACA">
+                        <option value="0">Não declarado.</option>
+                        <option value="1">Branca.</option>
+                        <option value="2">Preta.</option>
+                        <option value="3">Parda.</option>
+                        <option value="4">Amarela.</option>
+                        <option value="5">Indígena.</option>
+                    </select>
                 </div>
             </form>
         </div>

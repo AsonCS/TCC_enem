@@ -1,0 +1,59 @@
+UF_RESIDENCIA: (sigla UF: valor )
+	{'AC' : 1 ,
+	'AL' : 2 ,
+	'AM' : 3 ,
+	'AP' : 4 ,
+	'BA' : 5 ,
+	'CE' : 6 ,
+	'DF' : 7 ,
+	'ES' : 8 ,
+	'GO' : 9 ,
+	'MA' : 10 ,
+	'MG' : 11,
+	'MS' : 12 ,
+	'MT' : 13 ,
+	'PA' : 14 ,
+	'PB' : 15 ,
+	'PE' : 16 ,
+	'PI' : 17 ,
+	'PR' : 18 ,
+	'RJ' : 19 ,
+	'RN' : 20 ,
+	'RO' : 21 ,
+	'RR' : 22 ,
+	'RS' : 23 ,
+	'SC' : 24 ,
+	'SE' : 25 ,
+	'SP' : 26 ,
+	'TO' : 27}
+IDADE: (idade)
+	{valor}
+TP_SEXO: (tipo : valor )
+	{M:1,
+	F:0}
+ST_CONCLUSAO: (situacao : valor)
+	{Já concluí: 1,
+	Estou cursando e concluirei esse ano: 2,
+	Estou cursando e concluirei após ano: 3,
+	Não concluí e não estou cursando: 4}
+TP_ESCOLA: (tipo : valor )
+	{Pública: 1,
+	Privada: 2}
+TP_ESTADO_CIVIL: (tipo : valor )
+	{Solteiro(a): 0,
+	Casado(a)/Mora com um(a) companheiro(a): 1,
+	Divorciado(a)/Desquitado(a)/Separado(a): 2,
+	Viúvo(a): 3}
+TP_COR_RACA: (tipo : valor )
+	{Não declarado: 0,
+	Branca: 1,
+	Preta: 2,
+	Parda: 3,
+	Amarela: 4,
+	Indígena: 5}
+NOTA_CN: agrupado a cada 200
+NOTA_CH: agrupado a cada 200
+NOTA_LC: agrupado a cada 200
+NOTA_MT: agrupado a cada 200
+NU_NOTA_REDACAO: agrupado a cada 200
+IDX: index para ligar numeros reais

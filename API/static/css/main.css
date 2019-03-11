@@ -1,5 +1,12 @@
+body {
+	background-color: #fff;
+}
 
 .container-fluid{
+	background-color: #eee;
+	margin-top: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
     width: 90%;
 }
 

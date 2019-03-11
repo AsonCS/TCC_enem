@@ -33,10 +33,10 @@ def test():
 	#print(data)
 	return '<h1>O test foi:</h1><br/><br/><h2>' + pred.predict(data) + '</h2>'
 
-@app.route('/funcionario')
-@app.route('/funcionario/<name>')
-def funcionario(name=None):
-    return render_template('funcionario.html', name=name)
+@app.route('/form')
+@app.route('/form/<name>')
+def form(name=None):
+    return render_template('form_dados.html', name=name)
 
 if arg == "debug":
     if __name__ == '__main__':
