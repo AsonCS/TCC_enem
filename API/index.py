@@ -20,23 +20,22 @@ def fin():
     func()
     return "Shutting down..."
 
-@app.route('/test')
-def test():
-	data = []
-	data += [ int( request.args.get('uf'     ,1) ) ]
-	data += [ int( request.args.get('idade'  ,1) ) ]
-	data += [ int( request.args.get('sexo'   ,1) ) ]
-	data += [ int( request.args.get('sit_con',1) ) ]
-	data += [ int( request.args.get('tp_esc' ,1) ) ]
-	data += [ int( request.args.get('est_civ',1) ) ]
-	data += [ int( request.args.get('cor_rac',1) ) ]
-	#print(data)
-	return '<h1>O test foi:</h1><br/><br/><h2>' + pred.predict(data) + '</h2>'
+@app.route('/form',  methods=['POST'])
+def form2():
+    data = []
+    data += [ int( request.form.get('UF_RESIDENCIA'  ,1) ) ]
+    data += [ int( request.form.get('IDADE'          ,1) ) ]
+    data += [ int( request.form.get('TP_SEXO'        ,1) ) ]
+    data += [ int( request.form.get('ST_CONCLUSAO'   ,1) ) ]
+    data += [ int( request.form.get('TP_ESCOLA'      ,1) ) ]
+    data += [ int( request.form.get('TP_ESTADO_CIVIL',1) ) ]
+    data += [ int( request.form.get('TP_COR_RACA'    ,1) ) ]
+    result = pred.predict(data)
+    return render_template('form_dados.html', result=result)
 
-@app.route('/form')
-@app.route('/form/<name>')
-def form(name=None):
-    return render_template('form_dados.html', name=name)
+@app.route('/form', methods=['GET'])
+def form1(name=None):
+    return render_template('form_dados.html')
 
 if arg == "debug":
     if __name__ == '__main__':
