@@ -1,6 +1,14 @@
 from flask import Flask, url_for, render_template, request
 from Predict import Predict
 import sys
+import http.client as req
+
+try:
+    req.HTTPConnection("localhost", 8292).request("GET", "/kill")
+    req.HTTPConnection("localhost", 8292).request("GET", "/kill")
+    req.HTTPConnection("localhost", 8292).request("GET", "/kill")
+except:
+    pass
 
 arg = sys.argv[len(sys.argv) - 1]
 
